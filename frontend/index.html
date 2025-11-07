@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Submission App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📱 Phone-Powered Form App</h1>
+            <p class="subtitle">Backend running on Android phone!</p>
+            <div id="serverStatus" class="status-badge">Checking server...</div>
+        </header>
+
+        <div class="form-container">
+            <h2>Submit Your Information</h2>
+            <form id="userForm">
+                <div class="form-group">
+                    <label for="name">Full Name *</label>
+                    <input type="text" id="name" name="name" required placeholder="John Doe">
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number *</label>
+                    <input type="tel" id="phone" name="phone" required placeholder="+91 9876543210">
+                </div>
+
+                <div class="form-group">
+                    <label for="age">Age *</label>
+                    <input type="number" id="age" name="age" required min="1" max="150" placeholder="25">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email (Optional)</label>
+                    <input type="email" id="email" name="email" placeholder="john@example.com">
+                </div>
+
+                <button type="submit" class="btn-submit">Submit Form</button>
+            </form>
+
+            <div id="message" class="message"></div>
+        </div>
+
+        <div class="submissions-container">
+            <div class="submissions-header">
+                <h2>Recent Submissions</h2>
+                <button id="refreshBtn" class="btn-refresh">🔄 Refresh</button>
+            </div>
+            <div id="submissionsList"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
