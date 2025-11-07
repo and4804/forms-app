@@ -14,6 +14,11 @@ def index():
     """Serve the frontend"""
     return send_from_directory(app.static_folder, 'index.html')
 
+@app.route('/favicon.ico')
+def favicon():
+    return '', 204  # No content response (suppresses the 404)
+
+
 @app.route('/<path:path>')
 def serve_static(path):
     """Serve static files"""
